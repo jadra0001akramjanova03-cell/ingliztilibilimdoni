@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRO ENGLISH CHALLENGE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow"></div>
+
+  <header class="header">
+    <div class="logo">PRO <span>ENGLISH</span></div>
+    <div class="header-label">BILIMINGIZNI SINAB KO‘RING</div>
+  </header>
+
+  <main class="container">
+
+    <!-- BOSH SAHIFA -->
+    <section id="startScreen" class="screen">
+      <div class="hero">
+        <div class="hero-icon">✦</div>
+        <p class="eyebrow">INGLIZ TILI BILIMLARINI BAHOLASH</p>
+        <h1>PRO ENGLISH <span>CHALLENGE</span></h1>
+        <p class="hero-description">
+          Ingliz tilidagi bilimingizni sinang, darajangizni aniqlang
+          va yangi marralarni zabt eting!
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>6</strong>
+            <span>Daraja</span>
+          </div>
+          <div class="stat">
+            <strong>600</strong>
+            <span>Savol</span>
+          </div>
+          <div class="stat">
+            <strong>10</strong>
+            <span>Har bir testda</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <span class="gold-line"></span>
+        <h2>Darajangizni tanlang</h2>
+        <span class="gold-line"></span>
+      </div>
+
+      <div class="level-grid">
+        <button class="level-card" data-level="A1">
+          <span class="level-name">A1</span>
+          <span class="level-title">Beginner</span>
+          <span class="level-description">Boshlang‘ich</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+
+        <button class="level-card" data-level="A2">
+          <span class="level-name">A2</span>
+          <span class="level-title">Elementary</span>
+          <span class="level-description">Elementar</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+
+        <button class="level-card" data-level="B1">
+          <span class="level-name">B1</span>
+          <span class="level-title">Intermediate</span>
+          <span class="level-description">O‘rta</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+
+        <button class="level-card" data-level="B2">
+          <span class="level-name">B2</span>
+          <span class="level-title">Upper-Intermediate</span>
+          <span class="level-description">O‘rtadan yuqori</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+
+        <button class="level-card" data-level="C1">
+          <span class="level-name">C1</span>
+          <span class="level-title">Advanced</span>
+          <span class="level-description">Yuqori</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+
+        <button class="level-card" data-level="C2">
+          <span class="level-name">C2</span>
+          <span class="level-title">Proficiency</span>
+          <span class="level-description">Mukammal</span>
+          <span class="level-count">100 ta savol</span>
+        </button>
+      </div>
+
+      <div class="rules">
+        <h3>Test qoidalari</h3>
+        <div class="rule-grid">
+          <div>✦ Har bir testda 10 ta savol</div>
+          <div>✦ Har bir savol uchun 10 soniya</div>
+          <div>✦ Savollar tasodifiy tanlanadi</div>
+          <div>✦ Javoblar darhol tekshiriladi</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST SAHIFASI -->
+    <section id="quizScreen" class="screen hidden">
+      <div class="quiz-top">
+        <button id="quitBtn" class="outline-btn">← Chiqish</button>
+        <div class="current-level" id="currentLevel">A1</div>
+        <div class="question-counter" id="questionCounter">1 / 10</div>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-info">
+          <span>Test jarayoni</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="timer-card">
+        <div class="timer-circle" id="timerCircle">
+          <span id="timerText">10</span>
+        </div>
+        <div>
+          <strong>Qolgan vaqt</strong>
+          <p>Har bir savol uchun 10 soniya</p>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-type" id="questionType">VOCABULARY</div>
+        <h2 id="questionText">Savol yuklanmoqda...</h2>
+        <div id="answerOptions" class="answer-options"></div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+
+      <div class="quiz-bottom">
+        <span id="answeredCount">Javoblar: 0 / 10</span>
+        <button id="nextBtn" class="gold-btn hidden">Keyingi savol →</button>
+      </div>
+    </section>
+
+    <!-- NATIJA SAHIFASI -->
+    <section id="resultScreen" class="screen hidden">
+      <div class="result-card">
+        <div class="result-symbol">✦</div>
+        <p class="eyebrow">TEST YAKUNLANDI</p>
+        <h1>Natijangiz</h1>
+        <div class="score-circle">
+          <strong id="scoreText">0/10</strong>
+          <span id="percentageText">0%</span>
+        </div>
+        <h2 id="resultTitle">Yaxshi harakat!</h2>
+        <p id="resultMessage"></p>
+
+        <div class="result-stats">
+          <div>
+            <strong id="correctCount">0</strong>
+            <span>To‘g‘ri</span>
+          </div>
+          <div>
+            <strong id="wrongCount">0</strong>
+            <span>Noto‘g‘ri</span>
+          </div>
+          <div>
+            <strong id="skippedCount">0</strong>
+            <span>Javobsiz</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="againBtn" class="gold-btn">Qayta test topshirish</button>
+          <button id="reviewBtn" class="outline-btn">Javoblarni ko‘rish</button>
+          <button id="homeBtn" class="outline-btn">⌂ Bosh sahifaga qaytish</button>
+        </div>
+      </div>
+
+      <div id="reviewElement" class="review-list hidden"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-line"></div>
+    <p>PRO ENGLISH CHALLENGE</p>
+    <p class="author">Loyiha muallifi: AKRAMJONOVA JADRA MARATOVNA</p>
+    <span>Bilim — eng katta kuch!</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
